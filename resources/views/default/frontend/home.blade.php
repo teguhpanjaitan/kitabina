@@ -3,12 +3,12 @@
 @section('content')
 <div class="content">
     <div class="title m-b-md">
-        Keday ID
+        Kita Bina
     </div>
 
     @guest
     <p>
-        Belanja Mudan dan Murah
+        Pondok Tahfidz Qur'an Kitabina
     </p>
     @else
     <p>
