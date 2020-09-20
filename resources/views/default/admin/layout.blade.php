@@ -329,13 +329,13 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('order') }}">{{ __('Pesanan') }}</a>
+                            <a class="nav-link" href="{{ route('kas') }}">{{ __('Uang Kas') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('stock') }}">{{ __('Stok') }}</a>
+                            <a class="nav-link" href="{{ route('pengguna') }}">{{ __('Pengguna') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('product') }}">{{ __('Produk') }}</a>
+                            <a class="nav-link" href="{{ route('pondok') }}">{{ __('Pondok') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

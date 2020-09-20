@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProductRequest extends FormRequest
+class PondokRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,9 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'category_id' => 'required',
-            'price' => 'required',
-            'unit_id' => 'required'
+            'address' => 'required'
         ];
     }
 }
