@@ -21,6 +21,7 @@ Route::get('/order', 'Guest\OrderController@index')->name('order');
 
 Auth::routes(['verify' => true]);
 Route::get('/dashboard', 'Admin\DashboardController@index')->name('dashboard')->middleware('verified');
+
 //Pondok
 Route::get('/pondok', 'Admin\PondokController@index')->name('pondok')->middleware('verified');
 Route::get('/pondok/datatables', 'Admin\PondokController@datatables')->middleware('verified');
@@ -28,5 +29,8 @@ Route::get('/pondok/{id}', 'Admin\PondokController@getById')->name('pondok_singu
 Route::post('/pondok', 'Admin\PondokController@createUpdate')->middleware('verified');
 Route::post('/pondok/destroy', 'Admin\PondokController@destroy')->name('pondok_destroy')->middleware('verified');
 
+//Pengguna
+Route::get('/pengguna', 'Admin\PenggunaController@index')->name('pengguna')->middleware('verified');
+Route::get('/pengguna/datatables', 'Admin\PenggunaController@datatables')->middleware('verified');
+
 Route::get('/kas', 'Admin\CashController@index')->name('kas')->middleware('verified');
-Route::get('/pengguna', 'Admin\CashController@index')->name('pengguna')->middleware('verified');
