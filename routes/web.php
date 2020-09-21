@@ -33,4 +33,10 @@ Route::post('/pondok/destroy', 'Admin\PondokController@destroy')->name('pondok_d
 Route::get('/pengguna', 'Admin\PenggunaController@index')->name('pengguna')->middleware('verified');
 Route::get('/pengguna/datatables', 'Admin\PenggunaController@datatables')->middleware('verified');
 
-Route::get('/kas', 'Admin\CashController@index')->name('kas')->middleware('verified');
+//Kas
+Route::get('/kas', 'Admin\KasController@index')->name('kas')->middleware('verified');
+Route::get('/kas/datatables', 'Admin\KasController@datatables')->middleware('verified');
+Route::get('/kas/{id}', 'Admin\KasController@getById')->name('kas_singular')->middleware('verified');
+Route::post('/kas/pemasukan', 'Admin\KasController@createUpdatePemasukan')->name('kas_pemasukan')->middleware('verified');
+Route::post('/kas/pengeluaran', 'Admin\KasController@createUpdatePengeluaran')->name('kas_pengeluaran')->middleware('verified');
+Route::post('/kas/destroy', 'Admin\KasController@destroy')->name('kas_destroy')->middleware('verified');
