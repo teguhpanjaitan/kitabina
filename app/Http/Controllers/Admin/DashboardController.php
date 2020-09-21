@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Kas;
 
 class DashboardController extends Controller
 {
@@ -23,6 +23,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('default.admin.dashboard');
+        $kas = new Kas();
+        $saldos = $kas->getAllSaldo();
+        return view('default.admin.dashboard', compact("saldos"));
     }
 }
