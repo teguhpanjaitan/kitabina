@@ -15,14 +15,9 @@ class Kas extends Model
     protected $table = "kas";
     private $allHelper;
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->allHelper = new All();
-    }
-
     public function getDatatables()
     {
+        $this->allHelper = new All();
         $kas = DB::table('kas')
             ->select("*");
 
@@ -58,24 +53,23 @@ class Kas extends Model
 
     public function getAllSaldo()
     {
+        $this->allHelper = new All();
         $pondoks = DB::table('pondok')
             ->select("*")->get();
 
         $saldo = [];
-        
-        foreach($pondoks as $pondok)
-        {
+
+        foreach ($pondoks as $pondok) {
             $cashes = DB::table('kas')
-            ->select("*")
-            ->where("pondok_id", "=", $pondok->id)
-            ->get();
+                ->select("*")
+                ->where("pondok_id", "=", $pondok->id)
+                ->get();
 
             $amount = 0;
-            foreach($cashes as $cash){
-                if($cash->type == '1'){
+            foreach ($cashes as $cash) {
+                if ($cash->type == '1') {
                     $amount += $cash->amount;
-                }
-                else{
+                } else {
                     $amount -= $cash->amount;
                 }
             }
